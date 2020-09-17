@@ -27,19 +27,27 @@
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Suchbegriff"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Suchbegriff" />
             <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Suchbegriff}"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Typ"/>
             <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding TypItems}" SelectedItem="{Binding SelectedTypItem}"/>
 
-            <Button Grid.Row="0" Grid.Column="5" Content="Suchen"/>
-            <Button Grid.Row="1" Grid.Column="5" Content="Reset"/>
+            <Button Grid.Row="0" Grid.Column="5" Content="Suchen" Command="{Binding CmdSuchen}"/>
+            <Button Grid.Row="1" Grid.Column="5" Content="Reset" Command="{Binding CmdReset}"/>
         </Grid>
         <DataGrid Grid.Row="1"
                   ItemsSource="{Binding FilteredMetadataItems}"
                   SelectedItem="{Binding SelectedMetadataItem}"
-                  AutoGenerateColumns="True">
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Typ" Binding="{Binding SelectedTypItem}"/>
+                <DataGridTextColumn Header="Bezeichnung" Binding="{Binding Bezeichnung}"/>
+                <DataGridTextColumn Header="Erfassungsdatum" Binding="{Binding Erfassungsdatum}"/>
+                <DataGridTextColumn Header="Erfassungsdatum" Binding="{Binding Valutadatum}"/>
+                <DataGridTextColumn Header="Stichwoerter" Binding="{Binding Stichwoerter}"/>
+                <DataGridTextColumn Header="Dateipfad" Binding="{Binding Filepath}"/>
+            </DataGrid.Columns>
             <!--TODO: Remove AutoGenerateColumns="True" and specify your own columns -->
             <!--<DataGrid.Columns>
                 <DataGridTextColumn Header="Typ" Binding="{Binding Typ}"/>
