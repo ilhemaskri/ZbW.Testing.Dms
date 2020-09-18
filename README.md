@@ -4,5 +4,3 @@ Grid im WPF funktioniert leider nicht so wie es sollte. Die Daten werden nicht a
 Der Code im Hintergrund scheint allerdings zu stimmen. Gemäss Debugger wird die FilteredMetadataList korrekt erstellt, 
 mit genau der Anzahl Daten die existieren. Das Grid wird aufgrund des WPF Codes wahrscheinlich nicht funktionieren.
 Die Ursache konnte ich allerdings leider nicht ermitteln..
-
-Das ZIP-File Zbw.Testing.Dms-master.zip bitte ignorieren. Upload davon war ein versehen. 
